@@ -3,7 +3,7 @@ __import__("pkg_resources").declare_namespace(__name__)
 
 import wrapt
 
-from .state import StateManager
+from src.f0cal.core.state import StateManager
 
 CORE = StateManager()
 plugin = CORE.scanner.make_plugin_decorator
