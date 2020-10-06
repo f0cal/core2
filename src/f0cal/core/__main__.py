@@ -12,7 +12,7 @@ def _top_level_args(parser):
     parser.add_argument("-c", "--core", default=f0cal.CORE)
 
 def main():
-    f0cal.CORE.scanner.scan("f0cal")
+    f0cal.core.CORE.scanner.scan("f0cal")
     plugnparse.scan_and_run("f0cal")
 
 

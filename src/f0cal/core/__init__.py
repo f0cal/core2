@@ -4,7 +4,7 @@ __import__("pkg_resources").declare_namespace(__name__)
 
 import wrapt
 
-from src.f0cal.core.state import StateManager
+from f0cal.core.state import StateManager
 
 try:
     # Change here if project is renamed and does not equal the package name
