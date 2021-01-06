@@ -11,7 +11,7 @@
 import sys
 
 from pkg_resources import require, VersionConflict
-from setuptools import setup
+from setuptools import setup, find_namespace_packages
 
 try:
     require("setuptools>=38.3")
@@ -21,4 +21,5 @@ except VersionConflict:
 
 
 if __name__ == "__main__":
-    setup(use_pyscaffold=False)
+    setup(use_pyscaffold=False,
+          packages=find_namespace_packages(include=['f0cal.core.*']))
