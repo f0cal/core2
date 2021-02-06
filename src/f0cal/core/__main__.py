@@ -1,5 +1,6 @@
+#PYTHON_ARGCOMPLETE_OK
 import plugnparse
-import f0cal
+import f0cal.core
 
 @plugnparse.modifier([])
 def _top_level_args(parser):
@@ -8,10 +9,10 @@ def _top_level_args(parser):
     #     "-c", "--config", default=f0cal.CORE.config, type=f0cal.CORE.config.from_file
     # )
     # # parser.add_argument('-f0o', '--f0cal-config-override', action='append')
-    parser.add_argument("-c", "--core", default=f0cal.CORE)
+    parser.add_argument("-c", "--core", default=f0cal.core.CORE)
 
 def main():
-    f0cal.CORE.scanner.scan("f0cal")
+    f0cal.core.CORE.scanner.scan("f0cal")
     plugnparse.scan_and_run("f0cal")
 
 
