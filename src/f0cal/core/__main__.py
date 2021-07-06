@@ -9,6 +9,7 @@ def _top_level_args(parser):
     #     "-c", "--config", default=f0cal.CORE.config, type=f0cal.CORE.config.from_file
     # )
     # # parser.add_argument('-f0o', '--f0cal-config-override', action='append')
+    parser.add_argument("-j", "--json", action="store_true", help="Output in json format instead of human-readable")
     parser.add_argument("-c", "--core", default=f0cal.core.CORE)
 
 def main():

@@ -29,9 +29,9 @@ def _env_activate(parser, core, append, silent, **_):
         core.append_to_venv_activate()
 
 @f0cal.core.entrypoint(["env", "deactivate"])
-def _env_deactivate(parser, core):
+def _env_deactivate(parser, core, *args, **kwargs):
     raise NotImplementedError()
 
 @f0cal.core.entrypoint(["ini"])
-def _ini(parser, core):
+def _ini(parser, core, *args, **kwargs):
     core.run_all_ini()
