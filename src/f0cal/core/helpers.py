@@ -1,3 +1,4 @@
+import logging
 import os
 
 import jinja2 as j2
@@ -28,3 +29,15 @@ class Jinja2Renderer:
         dir_path, template_name = os.path.split(template_path)
         dir_path = os.path.abspath(dir_path)
         return cls(dir_path, template=template_name)
+
+
+logging.basicConfig(format='%(levelname)s:%(asctime)s:   %(message)s')
+def create_client_log(name, verbose=False):
+    if verbose:
+        level = logging.DEBUG
+    else:
+        level = logging.WARNING
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    return logger

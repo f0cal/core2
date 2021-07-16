@@ -11,6 +11,7 @@ def _top_level_args(parser):
     # # parser.add_argument('-f0o', '--f0cal-config-override', action='append')
     parser.add_argument("-j", "--json", action="store_true", help="Output in json format instead of human-readable")
     parser.add_argument("-c", "--core", default=f0cal.core.CORE)
+    parser.add_argument("-v", "--verbose", action="store_true", help="Print debugging output")
 
 def main():
     f0cal.core.CORE.scanner.scan("f0cal")
