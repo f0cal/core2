@@ -2,3 +2,20 @@ python.docker-build:
   image:
     start: python:3.7-slim
     end: f0cal/core:build
+
+make-like:
+
+  define:
+
+    core2/sanity.check:
+      inv: sanity.check
+
+    core2/python.push:
+      inv: python.docker-push
+      depends:
+        - core2/sanity.check
+
+    core2/utest:
+      inv: python.docker-test
+      depends:
+        - plugnparse/python.push
